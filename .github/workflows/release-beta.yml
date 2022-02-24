@@ -117,4 +117,4 @@ jobs:
 
       - name: Remove updates
         if: ${{ !success() }}
-        run: ./mage -v removeTag ${{ steps.updated-version.outputs.nextBetaVersion }}
+        run: mage -v removeTag ${{ steps.updated-version.outputs.nextBetaVersion }}
