@@ -81,7 +81,7 @@ func (h *HorusecPlatform) GetCoreRegistry() string {
 func (h *HorusecPlatform) GetCoreRepository() string {
 	repository := h.GetCoreComponent().Container.Image.Repository
 	if repository == "" {
-		return "horuszup/horusec-core"
+		return "wiliansilvazup/horusec-core"
 	}
 	return repository
 }

@@ -89,7 +89,7 @@ func (h *HorusecPlatform) GetAPIRegistry() string {
 func (h *HorusecPlatform) GetAPIRepository() string {
 	repository := h.GetAPIComponent().Container.Image.Repository
 	if repository == "" {
-		return "horuszup/horusec-api"
+		return "wiliansilvazup/horusec-api"
 	}
 	return repository
 }
