@@ -99,7 +99,7 @@ jobs:
 
       # Creates a tag with the next version created during the last step
       - name: Create and push tag
-        run: ./mage -v createAndPushTag ${{ steps.updated-version.outputs.nextReleaseVersion }}
+        run: mage -v createAndPushTag ${{ steps.updated-version.outputs.nextReleaseVersion }}
 
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v2
@@ -161,4 +161,4 @@ jobs:
 
       - name: Remove updates
         if: ${{ !success() }}
-        run: ./mage -v removeTag ${{ steps.updated-version.outputs.nextReleaseVersion }}
+        run: mage -v removeTag ${{ steps.updated-version.outputs.nextReleaseVersion }}
