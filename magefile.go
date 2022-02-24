@@ -47,6 +47,7 @@ const (
 	envReleaseVersion  = "HORUSEC_RELEASE_VERSION"
 )
 
+// UpdateVersioningFiles update project version in all files
 func UpdateVersioningFiles() error {
 	if err := sh.RunV("npm", "install", "-g", "json"); err != nil {
 		return err

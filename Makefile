@@ -8,7 +8,7 @@ HORUSEC ?= horusec
 CONTROLLER_GEN ?= $(shell pwd)/bin/controller-gen
 KUSTOMIZE ?= $(shell pwd)/bin/kustomize
 CRD_OPTIONS ?= "crd:trivialVersions=true,preserveUnknownFields=false"
-OPERATOR_VERSION ?= $(shell semver get release)
+OPERATOR_VERSION ?= $(shell curl -sL https://api.github.com/repos/ZupIT/horusec-operator/releases/latest | jq -r ".tag_name") # Get the latest version of the operator
 REGISTRY_IMAGE ?= horuszup/horusec-operator:${OPERATOR_VERSION}
 ADDLICENSE ?= addlicense
 
