@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-name: ReleaseAlpha
+name: release-alpha
 
 on:
   push:
@@ -25,6 +25,7 @@ jobs:
     permissions:
       contents: write
       packages: write
+      issues:   write
     runs-on: ubuntu-latest
     env:
       COSIGN_KEY_LOCATION: "/tmp/cosign.key"
@@ -67,7 +68,7 @@ jobs:
           push: true
           context: .
           file: ./deployments/dockerfiles/Dockerfile
-          tags: horuszup/horusec-operator:alpha
+          tags: wiliansilvazup/horusec-operator:alpha
 
       # Sign alpha operator using mage
       - name: Sign image
@@ -100,4 +101,5 @@ jobs:
             cosign.pub:./deployments/cosign.pub
           body: |
             ## Docker images
-            - `docker pull horuszup/horusec-operator:alpha`
+
+            - `docker pull wiliansilvazup/horusec-operator:alpha`

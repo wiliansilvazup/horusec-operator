@@ -90,7 +90,7 @@ func (h *HorusecPlatform) GetAnalyticRegistry() string {
 func (h *HorusecPlatform) GetAnalyticRepository() string {
 	repository := h.GetAnalyticComponent().Container.Image.Repository
 	if repository == "" {
-		return "horuszup/horusec-analytic"
+		return "wiliansilvazup/horusec-analytic"
 	}
 	return repository
 }

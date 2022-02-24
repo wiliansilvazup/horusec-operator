@@ -47,6 +47,7 @@ const (
 	envReleaseVersion  = "HORUSEC_RELEASE_VERSION"
 )
 
+// UpdateVersioningFiles update project version in all files
 func UpdateVersioningFiles() error {
 	if err := sh.RunV("npm", "install", "-g", "json"); err != nil {
 		return err
@@ -113,7 +114,7 @@ func getPlatformVersion() string {
 }
 
 func SignImage(tag string) error {
-	imageWithTag := fmt.Sprintf("horuszup/horusec-operator:%s", tag)
+	imageWithTag := fmt.Sprintf("wiliansilvazup/horusec-operator:%s", tag)
 
 	if err := sh.Run("cosign", "sign", "-key",
 		"$COSIGN_KEY_LOCATION", imageWithTag); err != nil {

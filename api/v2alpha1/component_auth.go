@@ -95,7 +95,7 @@ func (h *HorusecPlatform) GetAuthRegistry() string {
 func (h *HorusecPlatform) GetAuthRepository() string {
 	repository := h.GetAuthComponent().Container.Image.Repository
 	if repository == "" {
-		return "horuszup/horusec-auth"
+		return "wiliansilvazup/horusec-auth"
 	}
 	return repository
 }

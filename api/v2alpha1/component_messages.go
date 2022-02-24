@@ -81,7 +81,7 @@ func (h *HorusecPlatform) GetMessagesRegistry() string {
 func (h *HorusecPlatform) GetMessagesRepository() string {
 	repository := h.GetMessagesComponent().Container.Image.Repository
 	if repository == "" {
-		return "horuszup/horusec-messages"
+		return "wiliansilvazup/horusec-messages"
 	}
 	return repository
 }

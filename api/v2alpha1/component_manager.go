@@ -81,7 +81,7 @@ func (h *HorusecPlatform) GetManagerRegistry() string {
 func (h *HorusecPlatform) GetManagerRepository() string {
 	repository := h.GetManagerComponent().Container.Image.Repository
 	if repository == "" {
-		return "horuszup/horusec-manager"
+		return "wiliansilvazup/horusec-manager"
 	}
 	return repository
 }

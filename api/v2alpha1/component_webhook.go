@@ -81,7 +81,7 @@ func (h *HorusecPlatform) GetWebhookRegistry() string {
 func (h *HorusecPlatform) GetWebhookRepository() string {
 	repository := h.GetWebhookComponent().Container.Image.Repository
 	if repository == "" {
-		return "horuszup/horusec-webhook"
+		return "wiliansilvazup/horusec-webhook"
 	}
 	return repository
 }
